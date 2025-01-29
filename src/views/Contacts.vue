@@ -3,14 +3,17 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Number</th>
+            <th class="text-right">Number</th>
+			<!--
             <th class="text-right" ></th>
+			-->
           </tr>
         </thead>
         <tbody>
           <tr v-for="row in filtered" @click="call"  :key="row.number">
             <td>{{ row.name }}</td>
-            <td><a :href="callLink(row.number)" >{{ row.number }}</a></td>
+            <td class="text-right"><a :href="callLink(row.number)" >{{ row.number }}</a></td>
+			<!--
 			<td class="text-right">
 				<v-btn icon variant="text">
 					<v-icon>
@@ -18,6 +21,7 @@
 					</v-icon>
 				</v-btn>
 			</td>
+			-->
           </tr>
         </tbody>
       </v-table>
