@@ -22,4 +22,4 @@ Upload the contents of `dist` folder to your host machine into a folder named `c
 
 ## Demo
 
-You can play around with the demo  [demo](https://grosup.cz/demo/contacts)
+You can play around with the demo [here](https://grosup.cz/demo/contacts)
