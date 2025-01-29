@@ -62,9 +62,15 @@ const props = defineProps({
 });
 
 const filtered = computed( () => {
-		return !contacts.value ? [] : contacts.value.filter(item => {
-			return item.name.toLowerCase().includes(props.filter.toLowerCase()) || item.number.toLowerCase().includes(props.filter.toLowerCase());
-		});
+		if (!contacts.value){
+			return [];
+		}
+		if (props.filter){
+			return contacts.value.filter(item => {
+				return item.name.toLowerCase().includes(props.filter.toLowerCase()) || item.number.toLowerCase().includes(props.filter.toLowerCase());
+			});
+		}
+		return contacts.value;
 });
 
 function callLink(number){

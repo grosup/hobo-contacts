@@ -44,6 +44,10 @@ function onInput(val){
 	filter.value = val;
 }
 
+function onClear(){
+    filter.value("");
+}
+
 </script>
 
 <style scoped>
