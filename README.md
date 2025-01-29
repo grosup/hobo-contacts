@@ -4,7 +4,7 @@ A simple minimalistic vue-app that displays a personal phonebook with search fun
 
 ## Installation
 
-Use the package manager npm to install all the module.
+Use the package manager npm to install all the modules.
 
 ```bash
 npm install
