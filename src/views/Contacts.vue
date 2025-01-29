@@ -24,107 +24,18 @@
 </template>
 
 
-<script setup lang="ts">
+<script setup>
 import {ref, watch, computed} from "vue";
-const rows = ref([
-	{
-		name:"martin Grosup",
-		number:"+420 603 31",
-	},
-	{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-		{
-		name:"Tomas Grosup",
-		number:"+420 12345",
-	},
-	
-]);
+import axios from "axios";
+
+const contacts = ref();
+
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+axios.get(`/`)
+     .then((response) => {
+		contacts.value = response.data.contacts;
+	 })
+     .catch();
 
 const props = defineProps({
   filter: {
@@ -133,9 +44,8 @@ const props = defineProps({
   }
 });
 
-
 const filtered = computed( () => {
-		return rows.value.filter(item => {
+		return !contacts.value ? null : contacts.value.filter(item => {
 			console.log(item);
 			return item.name.toLowerCase().includes(props.filter.toLowerCase()) || item.number.toLowerCase().includes(props.filter.toLowerCase());
 		});

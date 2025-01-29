@@ -33,7 +33,7 @@
   </v-app>
 </template>
 
-<script setup lang="ts">
+<script setup >
 import { ref } from "vue";
 import Contacts from "./Contacts.vue";
 import Search from "./Search.vue";

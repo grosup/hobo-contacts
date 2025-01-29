@@ -1,9 +1,7 @@
 import { createVuetify } from "vuetify";
-import type { ThemeDefinition } from "vuetify";
-
 import "@mdi/font/css/materialdesignicons.css";
 
-const Lighttheme: ThemeDefinition = {
+const Lighttheme = {
   variables: {},
   colors: {
     primary: "#ee8a6a",
