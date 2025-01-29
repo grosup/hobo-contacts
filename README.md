@@ -1,6 +1,6 @@
 # Hobo-contacts
 
-A simple vue app that displays a personal phonebook with search.
+A simple minimalistic vue-app that displays a personal phonebook with search functionality.
 
 ## Installation
 
