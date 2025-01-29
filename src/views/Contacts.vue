@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in filtered" @click="call"  :key="row.number">
+          <tr v-for="row in filtered" @click="call" >
             <td>{{ row.name }}</td>
             <td class="text-right"><a :href="callLink(row.number)" >{{ row.number }}</a></td>
 			<!--
@@ -49,8 +49,7 @@ const props = defineProps({
 });
 
 const filtered = computed( () => {
-		return !contacts.value ? null : contacts.value.filter(item => {
-			console.log(item);
+		return !contacts.value ? [] : contacts.value.filter(item => {
 			return item.name.toLowerCase().includes(props.filter.toLowerCase()) || item.number.toLowerCase().includes(props.filter.toLowerCase());
 		});
 });
@@ -60,10 +59,6 @@ function callLink(number){
 }
 
 
-watch(() => props.filter, (newValue, oldValue) => {
- // React to prop changes
- console.log('Prop changed:', newValue);
-});
 
 </script>
 

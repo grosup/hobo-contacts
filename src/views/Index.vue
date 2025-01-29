@@ -44,11 +44,6 @@ function onInput(val){
 	filter.value = val;
 }
 
-function onClear(val){
-	console.log("clear " + val);
-}
-
-
 </script>
 
 <style scoped>
